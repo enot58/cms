@@ -31,12 +31,38 @@ class UserController {
             return next(ApiError.badRequest('Такой пользователь уже есть'))
         }
         // Хэширование пароля
-        const hashPassword = await bcrypt.hash(password, 5)
+        const hashPassword = await bcrypt.hashSync(password, 5)
         const user = await Models.User.create({login, role, password: hashPassword})
         const token = generateJwt(user.id, user.login, user.role)
 
         return res.json({token})
     }
+
+    async login (req, res, next) {
+        const {login, password} = req.body
+        const user = await Models.User.findOne({where: {login}})
+
+        if (!user) {
+            return next(ApiError.internal("Пользователь не найден"))
+        }
+        // Сравнение паролей
+        let comparePassword = bcrypt.compareSync(password, user.password)
+        if (!comparePassword) {
+            return next(ApiError.internal('Указан неверный пароль'))
+        }
+        const token = generateJwt(user.id, user.login, user.role)
+
+        return res.json({token})
+
+    }
+
+    async check (req, res, next) {
+        const {id, login, role} = req.user
+        const token = generateJwt(id, login, role)
+        return res.json({token})
+
+    }
+
 
 
 

@@ -34,5 +34,41 @@ User.init(
     }
 )
 
+// Описание пользователя
+class UserDescription extends Sequelize.Model {}
+UserDescription.init(
+    {
+        id: {
+            type: Sequelize.INTEGER,
+            autoIncrement: true,
+            primaryKey: true,
+            allowNull: false
+        },
+        firstName: {
+            type: Sequelize.STRING,
+            allowNull: true
+        },
+        lastName: {
+            type: Sequelize.STRING,
+            allowNull: true
+        },
+        position: {
+            type: Sequelize.STRING,
+            allowNull: true
+        },
+        img: {
+            type: Sequelize.STRING,
+            allowNull: true
+        },
+        color: {
+            type: Sequelize.STRING,
+            allowNull: true
+        }
+    },
+    {
+        sequelize, modelName: "user_description"
+    }
+)
 
-export default { User };
+
+export default { User, UserDescription };
