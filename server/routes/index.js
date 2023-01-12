@@ -1,10 +1,11 @@
 import express from "express";
 const router = express.Router();
 
-import testRouter from "./testRouter.js";
 
+import userRouter from "./userRouter.js";
 
-router.use('/test', testRouter)
+// Роутер регистрации, авторизации
+router.use('/user', userRouter)
 
 
 
