@@ -71,4 +71,78 @@ UserDescription.init(
 )
 
 
+// Склад наименование
+class StorageName extends Sequelize.Model {}
+StorageName.init(
+    {
+        id: {
+            type: Sequelize.INTEGER,
+            autoIncrement: true,
+            primaryKey: true,
+            allowNull: false
+        },
+        name: {
+            type: Sequelize.STRING,
+            allowNull: false
+        }
+    },
+    {
+        sequelize, modelName: "storage_name"
+    }
+)
+// Склад описание
+class StorageNameDescription extends Sequelize.Model {}
+StorageNameDescription.init(
+    {
+        id: {
+            type: Sequelize.INTEGER,
+            autoIncrement: true,
+            primaryKey: true,
+            allowNull: false
+        }
+    },
+    {
+        sequelize, modelName: "storage_name_desc"
+    }
+)
+
+class StatusName extends Sequelize.Model {}
+StatusName.init(
+    {
+        id: {
+            type: Sequelize.INTEGER,
+            autoIncrement: true,
+            primaryKey: true,
+            allowNull: false
+        },
+        name: {
+            type: Sequelize.STRING,
+            allowNull: false
+        }
+    },
+    {
+        sequelize, modelName: "status_name"
+    }
+)
+
+// Заказ
+class Order extends Sequelize.Model {}
+Order.init(
+    {
+        id: {
+            type: Sequelize.INTEGER,
+            autoIncrement: true,
+            primaryKey: true,
+            allowNull: false
+        }
+    },
+    {
+        sequelize, modelName: "order"
+    }
+)
+
+
+
+
+
 export default { User, UserDescription };

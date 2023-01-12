@@ -22,11 +22,17 @@ class UserController {
 
     async registration (req, res, next) {
         const { login, password, role } = req.body;
-        console.log(login)
+
         if (!login || !password) {
             return next(ApiError.badRequest('Неккоректный логин или пароль'))
         }
-        const candidate = await Models.User.findOne({login})
+
+        const candidate = await Models.User.findOne({
+            where: {
+                login: login
+            }
+        })
+
         if (candidate) {
             return next(ApiError.badRequest('Такой пользователь уже есть'))
         }
@@ -61,6 +67,28 @@ class UserController {
         const token = generateJwt(id, login, role)
         return res.json({token})
 
+    }
+
+    async dropUser (req, res, next) {
+        try {
+            const {id} = req.query
+            console.log('Я тут')
+            console.log(id)
+
+        } catch (e) {
+            console.log(e)
+        }
+
+    }
+
+    async editUser (req, res, next) {
+        try {
+            const {id} = req.query
+
+            console.log("Редактирование")
+        } catch (e) {
+            console.log(e)
+        }
     }
 
 
