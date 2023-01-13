@@ -1,5 +1,5 @@
-import ApiError from "../error/ApiError.js";
-import Models from "../models/models.js";
+import ApiError from "../../error/ApiError.js";
+import Models from "../../models/models.js";
 import bcrypt from "bcrypt";
 import jwt from 'jsonwebtoken';
 

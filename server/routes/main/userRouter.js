@@ -1,7 +1,7 @@
 import express from "express";
-import UserController from "../controller/userController.js";
-import authMiddleware from "../middleware/authMiddleware.js";
-import checkRoleMiddleware from "../middleware/checkRoleMiddleware.js";
+import UserController from "../../controller/main/userController.js";
+import authMiddleware from "../../middleware/authMiddleware.js";
+import checkRoleMiddleware from "../../middleware/checkRoleMiddleware.js";
 const router = express.Router();
 
 // Роут самого пользователя
