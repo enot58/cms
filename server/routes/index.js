@@ -3,29 +3,38 @@ const router = express.Router();
 
 
 import userRouter from "./main/userRouter.js";
+import storageRouter from "./main/storageRouter.js";
+import statusRouter from "./main/statusRouter.js";
+import orderRouter from "./main/orderRouter.js";
+import objectsRouter from "./main/objectsRouter.js";
+import productRouter from "./main/productRouter.js";
+import providerRouter from "./main/providerRouter.js";
+import transportCompanyRouter from "./main/transportCompanyRouter.js";
+import categoriesRouter from "./main/categoriesRouter.js";
+import logisticsRouter from "./main/logisticsRouter.js";
+
+//Основные
 
 // Роутер регистрации, авторизации
 router.use('/user', userRouter)
 // Роутер склада
-router.use('/storage')
+router.use('/storage', storageRouter)
 // Роутер статусов
-router.use('/status')
+router.use('/status', statusRouter)
 // Роутер заказов
-router.use('/order')
+router.use('/order', orderRouter)
 // Роутер объектов
-router.use('/object')
+router.use('/object', objectsRouter)
 // Роутер товаров
-router.use('/order')
+router.use('/product', productRouter)
 // Роутер поставщиков
-router.use('/provider')
+router.use('/provider', providerRouter)
 // Роутер Транспортные компании
-router.use('/transportCompany')
-// Роутер Транспортные компании
-router.use('/transportCompany')
+router.use('/transportCompany', transportCompanyRouter)
 // Роутер категории
-router.use('/сategories')
+router.use('/categories', categoriesRouter)
 // Роутер Маршруты
-router.use('/logistics')
+router.use('/logistics', logisticsRouter)
 
 
 

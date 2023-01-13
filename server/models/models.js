@@ -98,6 +98,14 @@ Objects.init(
             autoIncrement: true,
             primaryKey: true,
             allowNull: false
+        },
+        name: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+        address: {
+            type: Sequelize.STRING,
+            allowNull: false
         }
     },
     {
@@ -113,8 +121,13 @@ Products.init(
             autoIncrement: true,
             primaryKey: true,
             allowNull: false
+        },
+        name: {
+            type: Sequelize.STRING,
+            allowNull: false
         }
     },
+
     {
         sequelize, modelName: "products"
     }
@@ -128,12 +141,16 @@ Provider.init(
             type: Sequelize.INTEGER,
             autoIncrement: true,
             primaryKey: true,
-    allowNull: false
-}
-},
-{
-    sequelize, modelName: "provider"
-}
+            allowNull: false
+        },
+        name: {
+            type: Sequelize.STRING,
+            allowNull: false
+        }
+    },
+    {
+        sequelize, modelName: "provider"
+    }
 )
 
 //Транспортные компании
@@ -144,6 +161,14 @@ TransportCompany.init(
             type: Sequelize.INTEGER,
             autoIncrement: true,
             primaryKey: true,
+            allowNull: false
+        },
+        name: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+        address: {
+            type: Sequelize.STRING,
             allowNull: false
         }
     },
@@ -161,10 +186,14 @@ Categories.init(
             autoIncrement: true,
             primaryKey: true,
             allowNull: false
+        },
+        name: {
+            type: Sequelize.STRING,
+            allowNull: false
         }
     },
     {
-        sequelize, modelName: "сategories"
+        sequelize, modelName: "categories"
     }
 )
 // Маршруты
