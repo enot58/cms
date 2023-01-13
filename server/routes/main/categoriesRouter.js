@@ -4,11 +4,11 @@ import authMiddleware from "../../middleware/authMiddleware.js";
 const router = express.Router();
 
 
-router.get('/getAll',authMiddleware, categoriesController.getAll)
-router.get('/getOne',authMiddleware, categoriesController.getOne)
-router.post('/create',authMiddleware, categoriesController.create)
-router.put('/edit',authMiddleware, categoriesController.edit)
-router.delete('/del',authMiddleware, categoriesController.del)
+router.get('/',authMiddleware, categoriesController.getAll)
+router.get('/:id',authMiddleware, categoriesController.getOne)
+router.post('/',authMiddleware, categoriesController.create)
+router.put('/edit/:id',authMiddleware, categoriesController.edit)
+router.delete('/del/:id',authMiddleware, categoriesController.del)
 
 
 

@@ -3,7 +3,9 @@ import Models from "../../models/models.js";
 class CategoriesController {
     async getAll (req, res, next) {
         try {
+            const categories = await Models.Categories.findAll()
 
+            res.json(categories)
         } catch (e) {
             console.log(e)
         }
@@ -11,7 +13,12 @@ class CategoriesController {
 
     async getOne (req, res, next) {
         try {
+            const {id} = req.params
+            const categories = await Models.Categories.findOne({
+                where: {id}
+            })
 
+            return res.json(categories)
         } catch (e) {
             console.log(e)
         }
@@ -30,6 +37,12 @@ class CategoriesController {
 
     async edit (req, res, next) {
         try {
+            const {id} = req.params
+            const {name} = req.body
+            const categories = await Models.Categories.findOne({where: {id}})
+            await categories.update({name})
+
+            return res.json(categories)
 
         } catch (e) {
             console.log(e)
@@ -38,7 +51,11 @@ class CategoriesController {
 
     async del (req, res, next) {
         try {
+            const {id} = req.params
+            const categories = await Models.Categories.findOne({where: {id}})
+            await categories.destroy()
 
+            return res.json(categories)
         } catch (e) {
             console.log(e)
         }

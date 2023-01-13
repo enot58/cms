@@ -3,7 +3,6 @@ import Models from "../../models/models.js";
 import bcrypt from "bcrypt";
 import jwt from 'jsonwebtoken';
 
-
 const generateJwt = (id, login, role) => {
     return jwt.sign(
         {
