@@ -13,7 +13,9 @@ class CategoriesController {
 
     async getOne (req, res, next) {
         try {
+
             const {id} = req.params
+
             const categories = await Models.Categories.findOne({
                 where: {id}
             })

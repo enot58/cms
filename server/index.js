@@ -22,7 +22,7 @@ app.use('/api',  routes);
 
 // Слушаем порт сервера
 (async () => {
-    await sequelize.sync({force: false}).then( () => [
+    await sequelize.sync({force: true}).then( () => [
         app.listen(PORT, function () {
             console.log(`Сервер ожидает подключения...${PORT}`);
             //console.log(path.resolve('static'))

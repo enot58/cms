@@ -18,7 +18,7 @@ import logisticsRouter from "./main/logisticsRouter.js";
 // Роутер регистрации, авторизации
 router.use('/user', userRouter)
 // Роутер склада
-router.use('/storage', storageRouter)
+    router.use('/storage', storageRouter)
 // Роутер статусов
 router.use('/status', statusRouter)
 // Роутер заказов

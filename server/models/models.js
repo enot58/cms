@@ -46,6 +46,10 @@ StorageName.init(
         name: {
             type: Sequelize.STRING,
             allowNull: false
+        },
+        address: {
+            type: Sequelize.STRING,
+            allowNull: false
         }
     },
     {
@@ -144,6 +148,10 @@ Provider.init(
             allowNull: false
         },
         name: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+        address: {
             type: Sequelize.STRING,
             allowNull: false
         }

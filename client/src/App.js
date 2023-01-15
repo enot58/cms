@@ -1,13 +1,12 @@
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./components/AppRouter";
 
-import FormInput from "./components/formInput.jsx"
-import ListItem from "./components/listItem";
 
 function App() {
   return (
-    <div className="App">
-      <FormInput />
-        <ListItem />
-    </div>
+    <BrowserRouter>
+        <AppRouter/>
+    </BrowserRouter>
   );
 }
 
